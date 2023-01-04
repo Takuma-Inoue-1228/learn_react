@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Todo = () => {
+export const Todo = () => {
   return (
     <>
       <h2>Todo画面</h2>
@@ -10,5 +10,3 @@ const Todo = () => {
     </>
   );
 };
-
-export default Todo;

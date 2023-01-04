@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const User = () => {
+export const User = () => {
   return (
     <>
       <h2>ユーザ画面</h2>
@@ -10,5 +10,3 @@ const User = () => {
     </>
   );
 };
-
-export default User;

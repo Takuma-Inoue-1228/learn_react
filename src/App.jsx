@@ -2,13 +2,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // 各コンポーネントをインポートとして使えるようにする
-import Top from "./components/Top";
-import Todo from "./components/Todo";
-import Count from "./components/Count";
-import RandomImage from "./components/RandomImage";
-import User from "./components/User";
-import UserDetail from "./components/UserDetail";
-import NotFound from "./components/404";
+import { Top } from "./components/Top";
+import { Todo } from "./components/Todo";
+import { Count } from "./components/Count";
+import { RandomImage } from "./components/RandomImage";
+import { User } from "./components/User";
+import { UserDetail } from "./components/UserDetail";
+import { NotFound } from "./components/404";
 
 function App() {
   return (

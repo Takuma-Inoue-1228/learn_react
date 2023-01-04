@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Count = () => {
+export const Count = () => {
   return (
     <>
       <h2>カウント画面</h2>
@@ -10,5 +10,3 @@ const Count = () => {
     </>
   );
 };
-
-export default Count;

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Top = () => {
+export const Top = () => {
   return (
     <>
       <h2>トップ画面</h2>
@@ -49,5 +49,3 @@ const Top = () => {
     </>
   );
 };
-
-export default Top;
