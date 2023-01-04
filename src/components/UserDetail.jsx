@@ -12,9 +12,6 @@ export const UserDetail = () => {
         選択されたユーザ番号:
         <span className="pl-4">{params.id}</span>
       </p>
-      <footer>
-        <Link to={"/"}>トップに戻る</Link>
-      </footer>
     </>
   );
 };

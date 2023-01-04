@@ -1,6 +1,9 @@
 // react-router-domでBrowserRouter・Routes・Routeを使用するための宣言をする
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+// ヘッダーをコンポーネント化して全ての画面で使えるようにした
+import { Header } from "./components/Header";
+
 // 各コンポーネントをインポートとして使えるようにする
 import { Top } from "./components/Top";
 import { Todo } from "./components/Todo";
@@ -13,7 +16,9 @@ import { NotFound } from "./components/404";
 function App() {
   return (
     //   リンク先の各ページを記述
-    <BrowserRouter>
+      <BrowserRouter>
+          {/* Headerコンポーネントを呼び出す */}
+      <Header />
       <Routes>
         {/* 〜/のURLはTOPコンポーネントを描画するように設定 */}
         <Route path={"/"} element={<Top />} />
