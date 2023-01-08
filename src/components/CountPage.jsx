@@ -44,12 +44,10 @@ export const CountPage = () => {
         </button>
       </div>
       {/* alertがtrueの場合はアラート文を表示する。falseの場合は空文字を返す。 */}
-      {alert ? (
+      {alert && (
         <p className="bg-red-100 border border-red-400 text-red-700 m-4 px-4 py-3 rounded relative">
           値を0以下にはできません。
         </p>
-      ) : (
-        ""
       )}
     </>
   );
