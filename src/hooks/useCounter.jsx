@@ -13,7 +13,7 @@ export const useCounter = () => {
   };
 
   const decrement = () => {
-    if (0 < count) {
+    if (count > 0) {
       //   countが0より大きい場合はcountの値から1を引く。
       setCount(count - 1);
     } else {
@@ -22,5 +22,5 @@ export const useCounter = () => {
     }
   };
   // 戻り値としてcount,alert変数とincrement,decrement関数を返す。
-  return [count, alert, { increment, decrement }];
+  return [count, alert, increment, decrement];
 };

@@ -3,7 +3,7 @@ import { useCounter } from "../hooks/useCounter";
 
 export const CountPage = () => {
   // カスタムフックとして定義したuseCountを呼び出し、count,alert変数とincrement,decrement関数を呼び出す。
-  const [count, alert, { increment, decrement }] = useCounter();
+  const [count, alert, increment, decrement] = useCounter();
 
   // CountPageコンポーネントがマウントされた時とアンマウントされた時にコンスールを表示する。
   useEffect(() => {
