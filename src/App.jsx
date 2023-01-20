@@ -11,6 +11,7 @@ import { CountPage } from "./components/CountPage";
 import { RandomImagePage } from "./components/RandomImagePage";
 import { UserPage } from "./components/UserPage";
 import { UserDetailPage } from "./components/UserDetailPage";
+import { TodoDetailPage } from "./components/TodoDetailPage";
 import { NotFound } from "./components/404";
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
         <Route path={"/user"} element={<UserPage />} />
         {/* user/〜に値が入っていた場合はUserDetailのコンポーネントを描画 */}
         <Route path={"/user/:id"} element={<UserDetailPage />} />
+        {/* user/〜に値が入っていた場合はUserDetailのコンポーネントを描画 */}
+        <Route path={"/todo/:id"} element={<TodoDetailPage />} />
         {/* 指定していないURLのリクエストがあった場合は404コンポーネントを返す */}
         <Route path={"*"} element={<NotFound />} />
       </Routes>

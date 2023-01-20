@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // todoの配列を定義
 const DEFAULT_TODO = [
   { id: 1, todoTitle: "水を飲む" },
@@ -24,9 +26,19 @@ export const TodoPage = () => {
           <li key={index}>{todo}</li>
         ))}
       </ul>
+      <br />
       <ul>
         {todoLists.map((todo, x) => (
           <li key={x}>{todo}</li>
+        ))}
+      </ul>
+      <br />
+      <ul>
+        {[...Array(5)].map((d, i) => (
+          <li key={i}>
+                
+                <Link to={`/todo/${i + 1}`}>{`todo${i +1 }` }</Link>
+          </li>
         ))}
       </ul>
     </>
