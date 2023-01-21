@@ -1,46 +1,60 @@
-import { Link } from "react-router-dom";
-
-// todoの配列を定義
-const DEFAULT_TODO = [
-  { id: 1, todoTitle: "水を飲む" },
-  { id: 2, todoTitle: "ご飯を食べる" },
-  { id: 3, todoTitle: "片付ける" },
-];
-
-// map関数でイテレートする
-// 定義済みのDEFAULT_TODOオブジェクトのtodoTitleをtodo変数に入れていく
-const todoLists = DEFAULT_TODO.map((todo) => todo.todoTitle);
-console.log(todoLists);
-
-// 新しく配列を定義する
-const array = ["item1", "item2", "item3"];
-// 新しく定義した配列を使ってliタグを付与した配列をを作っていく
-const listItems = array.map((item) => `<li>${item}</li>`);
-console.log(listItems);
+import { useState } from "react";
 
 export const TodoPage = () => {
+  // デフォルトのtodo
+  const initialState = [
+    {
+      task: "Learn vue.js",
+      isCompleted: false,
+    },
+    {
+      task: "Learn React Hook",
+      isCompleted: false,
+    },
+    {
+      task: "Learn Gatsby.js",
+      isCompleted: false,
+    },
+  ];
+  // インプットエリアに入力されたtodo
+  const [task, setTask] = useState("");
+
+  // todoのリスト
+  const [todos, setTodos] = useState(initialState);
+
+  // インプットエリアに文字が入力されたらtaskを更新する
+  const handleNewTask = (event) => {
+    setTask(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    //画面がリロードされてしまうと値が消えてしまうため、ページが更新されないようにする
+    event.preventDefault();
+    //   入力値が空欄だったら処理を終了
+    if (task === "") return;
+    //   インプットエリアに入力された値をtodosに追加
+    setTodos((todos) => [...todos, { task, isCompleted: false }]);
+    //   インプット欄を空欄にする
+    setTask("");
+  };
+
   return (
-    <>
+    <div>
+      <h2>ToDo List</h2>
+      <form onSubmit={handleSubmit}>
+        Add Task :
+        <input
+          value={task}
+          placeholder="Add New Task"
+          onChange={handleNewTask}
+        />
+        <button type="submit">Add</button>
+      </form>
       <ul>
-        {todoLists.map((todo, index) => (
-          <li key={index}>{todo}</li>
+        {todos.map((todo, index) => (
+          <li key={index}>{todo.task}</li>
         ))}
       </ul>
-      <br />
-      <ul>
-        {todoLists.map((todo, x) => (
-          <li key={x}>{todo}</li>
-        ))}
-      </ul>
-      <br />
-      <ul>
-        {[...Array(5)].map((d, i) => (
-          <li key={i}>
-                
-                <Link to={`/todo/${i + 1}`}>{`todo${i +1 }` }</Link>
-          </li>
-        ))}
-      </ul>
-    </>
+    </div>
   );
 };
